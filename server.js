@@ -251,17 +251,18 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 						console.log('message sent successfully');
 
 					} else {
-					console.log('aaaeea == ' + response[0] +" dmdmd "+ body[0] + " vdvv "+error);
+					console.log('aaaeea == '  +" dmdmd "+ body[0] + " vdvv "+error);
 					}
 				});
 			}
 			facial();
 
+
 			function text(){
 				var toSend = "There seems to be no sexual offenders in the picture, but stay safe.".
 				if(isBADGUY)
 					toSend = "Be careful! We are pretty sure that there is a sexual offender in that picture!";
-				var BOdyyyy = "Body=" + toSend + "hiii&From=112133400272&To=16266795925&undefined=";
+				var BOdyyyy = "Body=" + toSend + "hiii&From=112133400272&To="+phoneNum+"16266795925&undefined=";
 				//var jsonObj = {"Body":url };
 				request({
 					uri: "https://api.twilio.com/2010-04-01/Accounts/AC8d85c1d898fe71ae9a46a016318fbedf/Messages.json",
@@ -283,11 +284,12 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 					return total;
 				} else {
 					console.log('erroasdjfhajksdfhr == ' + response +" dmdmd "+ body + " vdvv "+error);
-					return -1;
+					res.send("could not send text");
 				}
 			});
 				return 0;
 			}
+			text();
 
 			res.send("worked!");
 
