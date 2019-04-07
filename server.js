@@ -29,7 +29,7 @@ console.log("hi");
       		body : jsonObj
       		
 
-		}, function(error, response, body){
+		}, await function(error, response, body){
 			if (!error && response.statusCode == 200){
 			//	console.log('body string1: '+ response.personId);
 			//	console.log('body string2: '+ JSON.parse(body));
