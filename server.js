@@ -8,7 +8,7 @@ app.use(express.json());
 var request = require("request");
 
 var allText  = "";
-request.get('https://reginawang99.github.io/Oasis/alienwareapples.txt', function (error, response, body) {
+request.get('https://reginawang99.github.io/Oasis/lapd_2009.csv', function (error, response, body) {
 	if (!error && response.statusCode == 200) {
 		var allText = body;
 		
