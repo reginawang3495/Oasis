@@ -38,7 +38,7 @@ console.log("hi");
 				return ans.personId;
 				
 			} else {
-				console.log('error == ' + error);
+				console.log('error ==1 ' + error);
 				return -1;
 			}
 		});
@@ -65,7 +65,7 @@ console.log("hi");
 				var ans = JSON.parse(body);
 				console.log("yay face added!");				
 			} else {
-				console.log('error == ' + error);
+				console.log('error ==2 ' + error);
 			}
 		});
 	}
@@ -86,7 +86,7 @@ console.log("hi");
 				var ans = JSON.parse(body);
 				console.log("yay trained!");				
 			} else {
-				console.log('error == ' + error);
+				console.log('error ==3 ' + error);
 			}
 		});
 	}
