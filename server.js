@@ -7,7 +7,40 @@ let {PythonShell} = require('python-shell');
 app.use(express.json());
 var request = require("request");
 
+var allText  = "";
+request.get('https://reginawang99.github.io/Oasis/alienwareapples.txt', function (error, response, body) {
+	if (!error && response.statusCode == 200) {
+		var allText = body;
+		
+  }}); // add offender
 
+
+  allText.substring(1, allText.length-1);
+  var data = allText.split("\"\n\"");
+	
+
+//initialize 2D array for crime data with zeros
+var crimeModel = new Array(100);
+for(var i = 0; i < crimeModel.length; i++){
+	crimeModel[i] = new Array(100);
+	for(var j = 0; j < crimeModel[i].length; j++)
+		crimeModel[i][j] = 0;
+}
+
+//update crimeModel, 2D array, with number of crime occurrences at each location
+	for (i = 0; i < data.length; i++) {
+		var loc = data[i];
+		var div = loc.indexOf(",");
+
+		var lat = parseFloat( loc.slice(1,div) );
+		var long = parseFloat( loc.slice(div+1, loc.length-1 ));
+
+		if ((lat >= 33.5 && lat <= 34.5) && (long <= -118 && long >= -119)) { //check in bounds
+			crimeModel[round( abs(parseFloat( loc.slice(1,div) )-33.5)*100.0 )][round( abs(parseFloat( loc.slice(div+1, loc.length-1 ))+118)*100.0 )]++; 
+		}
+	}
+
+console.log("inforrrrrr"+[0][0]);
 
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var request = require('request');
