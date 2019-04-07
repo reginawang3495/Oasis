@@ -31,7 +31,7 @@ console.log("hi");
 
 		}, function(error, response, body){
 			if (!error && response.statusCode == 200){
-				console.log('body string: '+ body.toString());
+				console.log('body string: '+ response.body.toString());
 
 				return body.toString().substring(body.toString().indexOf(":")+3,body.toString().lastIndexOf("\"") );
 				
