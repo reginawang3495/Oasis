@@ -17,7 +17,7 @@ console.log("hi");
 		var result = "";
 		var jsonObj = {"name":name };
 		console.log("https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons");
-		var nothing = await request({
+		request({
 
 			uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons",
 			method: "POST",
