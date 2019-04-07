@@ -262,7 +262,7 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 				//var jsonObj = {"Body":url };
 				request({
 					uri: "https://api.twilio.com/2010-04-01/Accounts/AC8d85c1d898fe71ae9a46a016318fbedf/Messages.json",
-					method: "POST"	
+					method: "POST"	,
 
 					headers: {
 						"Content-Type": "application/x-www-form-urlencoded",
