@@ -33,7 +33,7 @@ console.log("hi");
 			if (!error && response.statusCode == 200){
 				console.log('message sent successfully');
 
-				//var ans = JSON.parse(body);
+				var ans = JSON.parse(body);
 				console.log(body);
 				return ans.personId;
 				
@@ -46,6 +46,8 @@ console.log("hi");
 	}
 
 		function addFace(id, url){
+		var jsonObj = {"url":url };
+
 		request({
       		json: true,
 
@@ -55,9 +57,7 @@ console.log("hi");
           		"Content-Type": "application/json",
           		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
       		},
-      		body :{
-      			"url": url 
-      		}
+      		body :jsonObj
    		}, function(error, response, body){
 			if (!error && response.statusCode == 200){
 				console.log('message sent successfully');
