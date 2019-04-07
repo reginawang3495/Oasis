@@ -31,6 +31,7 @@ console.log("hi");
 				console.log('message sent successfully');
 
 				var ans = JSON.parse(body);
+				console.log(ans.toString());
 				return ans.personId;
 				
 			} else {
@@ -92,7 +93,7 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 		var offenders = str.split("\n");
 		for(var i = 0; i < offenders.length; i++){
         	var id = addOffender(offenders[i].substring(1,offenders[i].indexOf("\",\""))); // add offender
-        	console.log("here is id: " id);
+        	console.log("here is id: "+ id);
         	addFace(id, offenders[i].substring(offenders[i].indexOf("\",\"")+3, offenders[i].length)); // add face
         }
         train();
