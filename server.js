@@ -47,6 +47,7 @@ var request = require('request');
 console.log("hi");
 
 function addOffender(name, callback){
+	try{
 	var result = "";
 	var jsonObj = {"name":name };
 	console.log("https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons");
@@ -76,8 +77,11 @@ function addOffender(name, callback){
 	}
 	);
 }
+catch(error){}
+}
 
 function addFace(id, url){
+	try{
 	var jsonObj = {"url":url };
 	console.log(url);
 	request({
@@ -98,9 +102,11 @@ function addFace(id, url){
 			console.log('error ==2 ' + error);
 		}
 	});
+}catch(error){}
 }
 
 function train(){
+	try{
 	request({
 		uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/train",
 		method: "POST",
@@ -119,6 +125,8 @@ function train(){
 			console.log('error ==3 ' + error);
 		}
 	});
+}
+catch(error){}
 }
 
 
@@ -228,6 +236,7 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 		res.send("bad request");
 	});*/
 	app.post('/Danger', (req, res) =>{
+		try{
 		if(req.body.key == "apples"){
 			var phoneNum = req.body.phoneNum;
 			var imageUrl = req.body.imageUrl;
@@ -287,11 +296,13 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 					console.log('aaaeea == '  +" dmdmd "+ body[0] + " vdvv "+error);
 					}
 				});
+			}catch(error){}
 			}
 			facial();
 
 
 			function text(){
+				try{
 				var toSend = "There seems to be no sexual offenders in the picture, but stay safe.";
 				if(isBADGUY)
 					toSend = "Be careful! We are pretty sure that there is a sexual offender in that picture!";
@@ -319,6 +330,7 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 					res.send("could not send text");
 				}
 			});
+			}catch(error){}
 			}
 			text();
 
