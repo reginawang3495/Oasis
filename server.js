@@ -196,7 +196,6 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 	});*/
 	app.post('/Danger', (req, res) =>{
 		if(req.body.key == "apples"){
-			console.log('req.body.startingLat;             ' + req.body.startingLat);
 			var phoneNum = req.body.phoneNum;
 			var imageUrl = req.body.imageUrl;
 			var isBADGUY = false;
@@ -231,6 +230,7 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 								json: true,
 								body :jsonObj
 							}, function(error, response, body){
+								console
 								if (!error && response.statusCode == 200){
 									console.log('message sent successfully');
 									try{
@@ -293,7 +293,7 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 				return 0;
 			}
 
-			res.send(pathNameMin);
+			res.send("worked!");
 
 		}
 		res.send("bad request");
