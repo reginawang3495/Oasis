@@ -98,9 +98,9 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 		for(var i = 0; i < offenders.length; i++){
 			var id =  addOffender(offenders[i].substring(1,offenders[i].indexOf("\",\"")),function(err, result){
 				if(err){
-					res.send(500, { error: 'something blew up' });
+					response.send('something blew up' );
 				} else {
-					res.send(result);
+					response.send(result);
 				}
   }); // add offender
 			console.log("here is id: "+ id);
