@@ -137,9 +137,6 @@ UINavigationControllerDelegate {
                                         cancelButtonTitle: "Ok")
                 alert.show()
             }
-            
-            n
-            
         }
         picker.dismiss(animated: true, completion: nil)
     }
