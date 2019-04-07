@@ -269,7 +269,7 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 						"AC8d85c1d898fe71ae9a46a016318fbedf":"9faa03e704e7afdeeb8479dd6d4ad94f",
 						"Authorization":"Basic QUM4ZDg1YzFkODk4ZmU3MWFlOWE0NmEwMTYzMThmYmVkZjo5ZmFhMDNlNzA0ZTdhZmRlZWI4NDc5ZGQ2ZDRhZDk0Zg==",
 					},
-					body = 'Body=' + toSend + 'hiii&From=112133400272&To=16266795925&undefined='
+					body = "Body=" + toSend + "hiii&From=112133400272&To=16266795925&undefined=",
 				//	json: true,
 				//	body :jsonObj
 			}, function(error, response, body){
