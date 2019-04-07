@@ -194,6 +194,112 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 	}
 		res.send("bad request");
 	});*/
+	app.post('/Danger', (req, res) =>{
+		if(req.body.key == "apples"){
+			console.log('req.body.startingLat;             ' + req.body.startingLat);
+			var phoneNum = req.body.phoneNum;
+			var imageUrl = req.body.imageUrl;
+			var isBADGUY = false;
+			function facial(){
+				var jsonObj = {"url":imageUrl };
+				console.log(imageUrl);
+				request({
+
+					uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect",
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+						"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
+					},
+					json: true,
+					body :jsonObj
+				}, function(error, response, body){
+					if (!error && response.statusCode == 200){
+						singlefaceid = body[0].faceId;
+
+						function identify(){
+							var jsonObj = {"faceIds":[singlefaceid],"largePersonGroupId":"sexualoffenders" };
+							console.log(url);
+							request({
+
+								uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/identify",
+								method: "POST",
+								headers: {
+									"Content-Type": "application/json",
+									"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
+								},
+								json: true,
+								body :jsonObj
+							}, function(error, response, body){
+								if (!error && response.statusCode == 200){
+									console.log('message sent successfully');
+									try{
+										response[0]
+										isBADGUY =true;
+									}catch(error){										
+										isBADGUY =false;
+								}
+
+								} else {
+									console.log('error ==2 ' + error);
+								}
+							});
+						}
+						identify();
+						console.log('message sent successfully');
+
+					} else {
+						console.log('error ==2 ' + error);
+					}
+				});
+			}
+			facial();
+
+			function text(){
+				var toSend = "There seems to be no sexual offenders in the picture, but stay safe.".
+				if(isBADGUY)
+					toSend = "Be careful! We are pretty sure that there is a sexual offender in that picture!";
+				//var jsonObj = {"Body":url };
+				request({
+					uri: "https://api.twilio.com/2010-04-01/Accounts/AC8d85c1d898fe71ae9a46a016318fbedf/Messages.json",
+					method: "POST"	
+
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded",
+						"AC8d85c1d898fe71ae9a46a016318fbedf":"9faa03e704e7afdeeb8479dd6d4ad94f",
+						"Authorization":"Basic QUM4ZDg1YzFkODk4ZmU3MWFlOWE0NmEwMTYzMThmYmVkZjo5ZmFhMDNlNzA0ZTdhZmRlZWI4NDc5ZGQ2ZDRhZDk0Zg==",
+					},
+					body = 'Body=' + toSend + 'hiii&From=112133400272&To=16266795925&undefined='
+				//	json: true,
+				//	body :jsonObj
+			}, function(error, response, body){
+				if (!error && response.statusCode == 200){
+					console.log('message sent successfully');
+
+					var ans = JSON.parse(body);
+					var steps = ans.routes[0]['legs'][1]['steps'];
+					var total = 0;
+					for(var i = 0; i < steps.length; i++){
+						total += calculateValue(steps[i].start_location.lat, steps[i].start_location.long, steps[i].end_location.lat, steps[i].end_location.long);
+					}
+
+					return total;
+				} else {
+					console.log('error == ' + error);
+					return -1;
+				}
+			});
+				return 0;
+			}
+
+			res.send(pathNameMin);
+
+		}
+		res.send("bad request");
+	});
+	app.get('/hi', function(req, res){
+		res.send("hi! i work still :)");
+	});
 
 	app.get('/hi', function(req, res){
 		res.send("hi! i work still :)");
