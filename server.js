@@ -33,12 +33,10 @@ function addOffender(name, callback){
 		if (!error && response.statusCode == 200){
 			status = "succeeded";
 			result = body.personId;
-	return result;
 			console.log("THIAWHFSJJFKF");
 
 			callback(result);
 		} else {
-				return error;
 			console.log("THIAWHFSJJFKF");
 			callback(result);
 
