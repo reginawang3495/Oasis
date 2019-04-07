@@ -102,9 +102,9 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 					console.log('something blew up' );
 				} 
   }); // add offender
-			console.log("here is id: "+ id);
+			console.log("here is id: "+ i);
 
-        	addFace(id, offenders[i].substring(offenders[i].indexOf("\",\"")+3, offenders[i].length-1)); // add face
+        	addFace("a1687612-ba3c-4fbb-9501-3d4f6958a38f", offenders[i].substring(offenders[i].indexOf("\",\"")+3, offenders[i].length-1)); // add face
         }
         train();
 
