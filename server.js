@@ -13,7 +13,7 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var request = require('request');
 console.log("hi");
 
-	function addOffender(name, callback){
+	function addOffender(name){
 		var jsonObj = {"name":name };
 		console.log("https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons");
 		request({
@@ -36,21 +36,16 @@ console.log("hi");
 
 
 				return body.personId;
-				callback();
 				
 			} else {
 				console.log('error ==1 ' + error);
 				return -1;
-				callback();
-
 			}
 		});
 		return 0;
-		callback();
-
 	}
 
-		function addFace(id, url, callback){
+		function addFace(id, url){
 		var jsonObj = {"url":url };
 		console.log(url);
 		request({
@@ -71,7 +66,6 @@ console.log("hi");
 				console.log('error ==2 ' + error);
 			}
 		});
-		callback();
 	}
 
 		function train(){
@@ -102,9 +96,9 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 		console.log("here is txt"+txt);
 		var offenders = txt.split("\n");
 		for(var i = 0; i < offenders.length; i++){
-        	var id = addOffender(offenders[i].substring(1,offenders[i].indexOf("\",\"")),function(){}); // add offender
+        	var id = await addOffender(offenders[i].substring(1,offenders[i].indexOf("\",\""))); // add offender
         	console.log("here is id: "+ id);
-        	addFace(id, offenders[i].substring(offenders[i].indexOf("\",\"")+3, offenders[i].length -1),function(){}); // add face
+        	addFace(id, offenders[i].substring(offenders[i].indexOf("\",\"")+3, offenders[i].length-1)); // add face
         }
         train();
 
