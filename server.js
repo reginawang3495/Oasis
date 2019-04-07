@@ -26,7 +26,7 @@ console.log("hi");
           		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
       		},
       		json: true,
-      		body : JSON.stringify(jsonObj)
+      		body : jsonObj
       		
 
 		}, function(error, response, body){
@@ -34,7 +34,7 @@ console.log("hi");
 				console.log('message sent successfully');
 
 				var ans = JSON.parse(body);
-				console.log(ans);
+				console.log(body.personId);
 				return ans.personId;
 				
 			} else {
