@@ -33,15 +33,18 @@ function addOffender(name, callback){
 		if (!error && response.statusCode == 200){
 			status = "succeeded";
 			result = body.personId;
+	return result;
+			console.log("THIAWHFSJJFKF");
 
 			callback(null, {status : status});
 		} else {
+				return result;
+			console.log("THIAWHFSJJFKF");
 			callback(error);
 
 		}
 	}
 		);
-	return result;
 }
 
 function addFace(id, url){
