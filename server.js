@@ -29,7 +29,7 @@ console.log("hi");
       		body : jsonObj
       		
 
-		}, await function(error, response, body){
+		},  function(error, response, body, callback){
 			if (!error && response.statusCode == 200){
 			//	console.log('body string1: '+ response.personId);
 			//	console.log('body string2: '+ JSON.parse(body));
@@ -37,9 +37,11 @@ console.log("hi");
 
 
 				result = body.personId;
+				callback();
 				
 			} else {
 				console.log('error ==1 ' + error);
+				callback();
 			}
 		});
 		return result;
