@@ -38,7 +38,7 @@ UINavigationControllerDelegate {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             myImg.contentMode = .scaleToFill
             myImg.image = pickedImage
-            let compressedData = pickedImage.jpegData(compressionQuality: 0.01)
+            //let compressedData = pickedImage.jpegData(compressionQuality: 0.01)
             //guard let compressedImage = UIImage(data: compressedData!) else { return }
             //guard let imgString = compressedImage.toString() else { return }
 
