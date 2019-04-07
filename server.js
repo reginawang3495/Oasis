@@ -34,7 +34,7 @@ console.log("hi");
 				console.log('message sent successfully');
 
 				var ans = JSON.parse(body);
-				console.log(ans);
+				console.log(ans.personId);
 				return ans.personId;
 				
 			} else {
