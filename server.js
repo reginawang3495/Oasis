@@ -238,10 +238,10 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 										isBADGUY =true;
 									}catch(error){										
 										isBADGUY =false;
-								}
+									}
 
 								} else {
-									console.log('error ==2 ' + error);
+					console.log('aaaa == ' + response +" dmdmd "+ body + " vdvv "+error);
 								}
 							});
 						}
@@ -277,16 +277,10 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 				if (!error && response.statusCode == 200){
 					console.log('message sent successfully');
 
-					var ans = JSON.parse(body);
-					var steps = ans.routes[0]['legs'][1]['steps'];
-					var total = 0;
-					for(var i = 0; i < steps.length; i++){
-						total += calculateValue(steps[i].start_location.lat, steps[i].start_location.long, steps[i].end_location.lat, steps[i].end_location.long);
-					}
 
 					return total;
 				} else {
-					console.log('erroasdjfhajksdfhr == ' + error);
+					console.log('erroasdjfhajksdfhr == ' + response +" dmdmd "+ body + " vdvv "+error);
 					return -1;
 				}
 			});
