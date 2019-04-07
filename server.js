@@ -21,7 +21,7 @@ console.log("hi");
 			method: "POST",
 			headers: {
           		"Content-Type": "application/json",
-          		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d"
+          		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
       		},
       		body :{
       			"name": name 
@@ -48,7 +48,7 @@ console.log("hi");
 			method: "POST",
 			headers: {
           		"Content-Type": "application/json",
-          		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d"
+          		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
       		},
       		body :{
       			"url": url 
@@ -71,7 +71,7 @@ console.log("hi");
 			method: "POST",
 			headers: {
           		"Content-Type": "application/json",
-          		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d"
+          		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
       		}
 		}, function(error, response, body){
 			if (!error && response.statusCode == 200){
