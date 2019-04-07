@@ -49,7 +49,7 @@ UINavigationControllerDelegate {
                 
                 let headers = [
                     "Content-Type": "image/jpeg",
-                    "Authorization": "Bearer ya29.GlvkBtT7FK12njM-rBV5YOLLYINshGIMCToGooyXjn1n5mjeM3IPREeC_hHBG_Bktw_w8hg4RhwdU6I9gP11XRotn5LAk7F3kLr2ykhKteVgPIl-XU4oPJqKIcnV",
+                    "Authorization": "Bearer ya29.GlvkBiROao_aCxxILESanMIfyZa9Z6C_1h_XZ5YOAEGtHPUeC8FtgxpX9wZx1lyd6oc70OPycXZLM7WPH3nZLFHAuJ9PPq3b8oqVRJOPyRyDu6S5qNr1OEfrzeY-",
                     "cache-control": "no-cache",
                     "Postman-Token": "2a30eae1-af88-4d4a-90f4-366e56980450"
                 ]
