@@ -131,10 +131,10 @@ UINavigationControllerDelegate {
                 
             }
             catch {
-                let alert = UIAlertView(title: "Oh no",
-                                        message: "Your image can't be converted",
+                let alert = UIAlertView(title: "Be careful",
+                                        message: "You're in a dangerous area",
                                         delegate: nil,
-                                        cancelButtonTitle: "Ok")
+                                        cancelButtonTitle: "I will")
                 alert.show()
             }
         }
