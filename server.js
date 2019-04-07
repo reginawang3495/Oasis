@@ -13,78 +13,80 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var request = require('request');
 console.log("hi");
 
-	function addOffender(name, callback){
-		var result = "";
-		var jsonObj = {"name":name };
-		console.log("https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons");
-		request({
+function addOffender(name, callback){
+	var result = "";
+	var jsonObj = {"name":name };
+	console.log("https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons");
+	request({
 
-			uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons",
-			method: "POST",
-			headers: {
-          		"Content-Type": "application/json",
-          		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
-      		},
-      		json: true,
-      		body : jsonObj
-      		
+		uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons",
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+			"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
+		},
+		json: true,
+		body : jsonObj
 
-		},  function(error, response, body){
-			if (!error && response.statusCode == 200){
+
+	},  function(error, response, body){
+		if (!error && response.statusCode == 200){
 			status = "succeeded";
-							result = body.personId;
+			result = body.personId;
 
-      callback(null, {status : status});
-    } else {
-      callback(error);
+			callback(null, {status : status});
+		} else {
+			callback(error);
 
-  });
-		return result;
+		}
 	}
+		);
+	return result;
+}
 
-		function addFace(id, url){
-		var jsonObj = {"url":url };
-		console.log(url);
-		request({
+function addFace(id, url){
+	var jsonObj = {"url":url };
+	console.log(url);
+	request({
 
-			uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons/"+id+"/persistedfaces",
-			method: "POST",
-			headers: {
-          		"Content-Type": "application/json",
-          		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
-      		},
-      		json: true,
-      		body :jsonObj
-   		}, function(error, response, body){
-			if (!error && response.statusCode == 200){
-				console.log('message sent successfully');
+		uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons/"+id+"/persistedfaces",
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+			"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
+		},
+		json: true,
+		body :jsonObj
+	}, function(error, response, body){
+		if (!error && response.statusCode == 200){
+			console.log('message sent successfully');
 
-			} else {
-				console.log('error ==2 ' + error);
-			}
-		});
-	}
+		} else {
+			console.log('error ==2 ' + error);
+		}
+	});
+}
 
-		function train(){
-		request({
-			uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/train",
-			method: "POST",
-			headers: {
-          		"Content-Type": "application/json",
-          		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
-      		},
-      		json: true
-		}, function(error, response, body){
-			if (!error && response.statusCode == 200){
-				console.log('message sent successfully');
+function train(){
+	request({
+		uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/train",
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+			"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
+		},
+		json: true
+	}, function(error, response, body){
+		if (!error && response.statusCode == 200){
+			console.log('message sent successfully');
 
-				var ans = JSON.parse(body);
-				console.log("yay trained!");				
-			} else {
-				console.log('error ==3 ' + error);
-			}
-		});
-	}
+			var ans = JSON.parse(body);
+			console.log("yay trained!");				
+		} else {
+			console.log('error ==3 ' + error);
+		}
+	});
+}
 
 
 request.get('https://reginawang99.github.io/Oasis/resources.txt', function (error, response, body) {
