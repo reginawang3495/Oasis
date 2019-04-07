@@ -95,6 +95,7 @@ function train(){
 request.get('https://reginawang99.github.io/Oasis/resources.txt', function (error, response, body) {
 	if (!error && response.statusCode == 200) {
 		var txt = body;
+		var callback;
 		console.log("here is txt"+txt);
 		var offenders = txt.split("\n");
 		for(var i = 0; i < offenders.length; i++){
