@@ -50,7 +50,7 @@ console.log("hi");
 
 	}
 
-		function addFace(id, url, callback()){
+		function addFace(id, url, callback){
 		var jsonObj = {"url":url };
 		console.log(url);
 		request({
