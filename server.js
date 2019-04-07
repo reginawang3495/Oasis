@@ -281,13 +281,11 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 					console.log('message sent successfully');
 
 
-					return total;
 				} else {
 					console.log('erroasdjfhajksdfhr == ' + response +" dmdmd "+ body + " vdvv "+error);
 					res.send("could not send text");
 				}
 			});
-				return 0;
 			}
 			text();
 
@@ -300,9 +298,6 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 		res.send("hi! i work still :)");
 	});
 
-	app.get('/hi', function(req, res){
-		res.send("hi! i work still :)");
-	});
 
 	app.listen(process.env.PORT || 5000, function (){
 		console.log('Listening on port: ' + process.env.PORT);
