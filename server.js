@@ -17,7 +17,7 @@ console.log("hi");
 	function addOffender(name){
 		console.log("https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons");
 		request({
-			      		json: true
+			      		json: true,
 
 			uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons",
 			method: "POST",
@@ -47,7 +47,7 @@ console.log("hi");
 
 		function addFace(id, url){
 		request({
-      		json: true
+      		json: true,
 
 			uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons/"+id+"/persistedfaces",
 			method: "POST",
