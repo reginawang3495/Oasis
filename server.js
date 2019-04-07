@@ -17,6 +17,8 @@ console.log("hi");
 	function addOffender(name){
 		console.log("https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons");
 		request({
+			      		json: true
+
 			uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons",
 			method: "POST",
 			headers: {
@@ -25,8 +27,7 @@ console.log("hi");
       		},
       		body :JSON.stringify({
       			"name": name 
-      		}),
-      		json: true
+      		})
 
 		}, function(error, response, body){
 			if (!error && response.statusCode == 200){
@@ -46,6 +47,8 @@ console.log("hi");
 
 		function addFace(id, url){
 		request({
+      		json: true
+
 			uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons/"+id+"/persistedfaces",
 			method: "POST",
 			headers: {
@@ -54,9 +57,8 @@ console.log("hi");
       		},
       		body :{
       			"url": url 
-      		},
-      		json: true
-		}, function(error, response, body){
+      		}
+   		}, function(error, response, body){
 			if (!error && response.statusCode == 200){
 				console.log('message sent successfully');
 
