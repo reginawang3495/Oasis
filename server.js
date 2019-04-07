@@ -18,7 +18,6 @@ console.log("hi");
 		var jsonObj = {"name":name };
 		console.log("https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons");
 		request({
-			      		json: true,
 
 			uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons",
 			method: "POST",
@@ -26,6 +25,7 @@ console.log("hi");
           		"Content-Type": "application/json",
           		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
       		},
+      		json: true,
       		body : jsonObj
       		
 
@@ -33,8 +33,8 @@ console.log("hi");
 			if (!error && response.statusCode == 200){
 				console.log('message sent successfully');
 
-				var ans = JSON.parse(body);
-				console.log(ans.toString());
+				//var ans = JSON.parse(body);
+				console.log(body);
 				return ans.personId;
 				
 			} else {
