@@ -33,9 +33,7 @@ console.log("hi");
 			if (!error && response.statusCode == 200){
 				console.log('message sent successfully');
 
-				var ans = JSON.parse(body);
-				console.log(ans.personId);
-				return ans.personId;
+				return body.substring(body.indexOf(":")+3,body.lastIndexOf("\"") );
 				
 			} else {
 				console.log('error ==1 ' + error);
@@ -62,8 +60,6 @@ console.log("hi");
 			if (!error && response.statusCode == 200){
 				console.log('message sent successfully');
 
-				var ans = JSON.parse(body);
-				console.log("yay face added!");				
 			} else {
 				console.log('error ==2 ' + error);
 			}
