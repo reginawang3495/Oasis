@@ -34,16 +34,14 @@ function addOffender(name, callback){
 			status = "succeeded";
 			result = body.personId;
 			console.log("THIAWHFSJJFKF");
-			callback = result;
 			callback(result);
 		} else {
 			console.log("THIAWHFSJJFKF");
-			callback = error;
 			callback(error);
 
 		}
 	}
-		);
+	);
 }
 
 function addFace(id, url){
@@ -98,9 +96,15 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 		console.log("here is txt"+txt);
 		var offenders = txt.split("\n");
 		for(var i = 0; i < offenders.length; i++){
-        	var id =  addOffender(offenders[i].substring(1,offenders[i].indexOf("\",\"")),callback); // add offender
-        	console.log("here is id: "+ id);
-        	        	console.log("here is callback: "+ callback);
+			var id =  addOffender(offenders[i].substring(1,offenders[i].indexOf("\",\"")),function(err, result){
+				if(err){
+					res.send(500, { error: 'something blew up' });
+				} else {
+					res.send(result);
+				}
+  }); // add offender
+			console.log("here is id: "+ id);
+			console.log("here is callback: "+ callback);
 
         	addFace(id, offenders[i].substring(offenders[i].indexOf("\",\"")+3, offenders[i].length-1)); // add face
         }
