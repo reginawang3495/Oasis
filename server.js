@@ -42,7 +42,6 @@ console.log("hi");
 				return -1;
 			}
 		});
-		return 0;
 	}
 
 		function addFace(id, url){
@@ -96,7 +95,7 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 		console.log("here is txt"+txt);
 		var offenders = txt.split("\n");
 		for(var i = 0; i < offenders.length; i++){
-        	var id = await addOffender(offenders[i].substring(1,offenders[i].indexOf("\",\""))); // add offender
+        	var id =  addOffender(offenders[i].substring(1,offenders[i].indexOf("\",\""))); // add offender
         	console.log("here is id: "+ id);
         	addFace(id, offenders[i].substring(offenders[i].indexOf("\",\"")+3, offenders[i].length-1)); // add face
         }
