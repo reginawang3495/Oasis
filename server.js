@@ -14,6 +14,7 @@ var request = require('request');
 console.log("hi");
 
 	function addOffender(name){
+		var result = "";
 		var jsonObj = {"name":name };
 		console.log("https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons");
 		request({
@@ -35,13 +36,13 @@ console.log("hi");
 				console.log('body string3: '+ body.personId);
 
 
-				return body.personId;
+				result = body.personId;
 				
 			} else {
 				console.log('error ==1 ' + error);
-				return -1;
 			}
 		});
+		return result;
 	}
 
 		function addFace(id, url){
