@@ -39,8 +39,9 @@ for (i = 0; i < data.length; i++) {
 			crimeModel[round( abs(parseFloat( loc.slice(1,div) )-33.5)*100.0 )][round( abs(parseFloat( loc.slice(div+1, loc.length-1 ))+118)*100.0 )]++; 
 		}
 	}
+	crimeModel.toString();
 
-	console.log("inforrrrrr"+[0][0]);
+	console.log("inforrrrrr"+[3][7]);
 
 	var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 	var request = require('request');
