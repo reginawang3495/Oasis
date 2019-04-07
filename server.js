@@ -26,7 +26,7 @@ console.log("hi");
           		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
       		},
       		json: true,
-      		body : SON.stringify(jsonObj)
+      		body : JSON.stringify(jsonObj)
       		
 
 		}, function(error, response, body){
