@@ -262,7 +262,7 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 				var toSend = "There seems to be no sexual offenders in the picture, but stay safe.";
 				if(isBADGUY)
 					toSend = "Be careful! We are pretty sure that there is a sexual offender in that picture!";
-				var BOdyyyy = "Body=" + toSend + "hiii&From=112133400272&To="+phoneNum+"16266795925&undefined=";
+				var BOdyyyy = "Body=" + toSend + "hiii&From=112133400272&To="+phoneNum+"&undefined=";
 				//var jsonObj = {"Body":url };
 				request({
 					uri: "https://api.twilio.com/2010-04-01/Accounts/AC8d85c1d898fe71ae9a46a016318fbedf/Messages.json",
