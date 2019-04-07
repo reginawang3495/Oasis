@@ -31,9 +31,9 @@ console.log("hi");
 
 		}, function(error, response, body){
 			if (!error && response.statusCode == 200){
-				console.log('message sent successfully');
+				console.log('body string: '+ body.toString());
 
-				return body.substring(body.toString().indexOf(":")+3,body.toString().lastIndexOf("\"") );
+				return body.toString().substring(body.toString().indexOf(":")+3,body.toString().lastIndexOf("\"") );
 				
 			} else {
 				console.log('error ==1 ' + error);
