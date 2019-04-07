@@ -26,7 +26,7 @@ for(var i = 0; i < crimeModel.length; i++){
 	for(var j = 0; j < crimeModel[i].length; j++)
 		crimeModel[i][j] = 0;
 }
-counsole.log(allText.substring(0,10));
+console.log(allText.substring(0,10));
 
 //update crimeModel, 2D array, with number of crime occurrences at each location
 for (i = 0; i < data.length; i++) {
