@@ -34,11 +34,12 @@ function addOffender(name, callback){
 			status = "succeeded";
 			result = body.personId;
 			console.log("THIAWHFSJJFKF");
-
+			callback = result;
 			callback(result);
 		} else {
 			console.log("THIAWHFSJJFKF");
-			callback(result);
+			callback = error;
+			callback(error);
 
 		}
 	}
