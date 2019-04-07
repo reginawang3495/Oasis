@@ -25,9 +25,8 @@ console.log("hi");
           		"Content-Type": "application/json",
           		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
       		},
-      		body :JSON.stringify({
-      			"name": name 
-      		})
+      		body :      			"name": name 
+      		)
 
 		}, function(error, response, body){
 			if (!error && response.statusCode == 200){
