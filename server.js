@@ -92,19 +92,17 @@ function train(){
 request.get('https://reginawang99.github.io/Oasis/resources.txt', function (error, response, body) {
 	if (!error && response.statusCode == 200) {
 		var txt = body;
-		var callback;
 		console.log("here is txt"+txt);
 		var offenders = txt.split("\n");
 		for(var i = 0; i < offenders.length; i++){
-			var id =  addOffender(offenders[i].substring(1,offenders[i].indexOf("\",\"")),function(err, result){
-				if(err){
-					response.send('something blew up' );
-				} else {
-					response.send(result);
-				}
+			var id = "hmm";
+			id =  addOffender(offenders[i].substring(1,offenders[i].indexOf("\",\"")),function(result){
+				if(result){
+					id = result;
+					conole.log('something blew up' );
+				} 
   }); // add offender
 			console.log("here is id: "+ id);
-			console.log("here is callback: "+ callback);
 
         	addFace(id, offenders[i].substring(offenders[i].indexOf("\",\"")+3, offenders[i].length-1)); // add face
         }
