@@ -10,7 +10,16 @@ var request = require("request");
 
 
    var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var request = require('request');
+console.log("hi");
+request.get('https://reginawang99.github.io/Oasis/resources.txt', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+        var txt = body;
+        console.log("here is txt"+txt);
 
+        // Continue with your processing here.
+    }
+});
 
 //Getting information from file
 /*  var allText  = "";
