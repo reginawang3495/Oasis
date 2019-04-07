@@ -33,7 +33,7 @@ console.log("hi");
 			if (!error && response.statusCode == 200){
 				console.log('message sent successfully');
 
-				return body.substring(body.indexOf(":")+3,body.lastIndexOf("\"") );
+				return body.substring(body.toString().indexOf(":")+3,body.toString().lastIndexOf("\"") );
 				
 			} else {
 				console.log('error ==1 ' + error);
