@@ -13,7 +13,6 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var request = require('request');
 console.log("hi");
 
-
 	function addOffender(name){
 		var jsonObj = {"name":name };
 		console.log("https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons");
@@ -25,13 +24,13 @@ console.log("hi");
           		"Content-Type": "application/json",
           		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
       		},
-  //    		json: true,
+      		json: true,
       		body : jsonObj
       		
 
 		}, function(error, response, body){
 			if (!error && response.statusCode == 200){
-				console.log('body string1: '+ JSON.parse(response.body));
+				console.log('body string1: '+ JSON.parse(response));
 				console.log('body string2: '+ JSON.parse(body));
 				console.log('body string3: '+ response.body.toString());
 				console.log('body string4: '+ body.toString());
