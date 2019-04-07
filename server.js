@@ -99,7 +99,7 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 			id =  addOffender(offenders[i].substring(1,offenders[i].indexOf("\",\"")),function(result){
 				if(result){
 					id = result;
-					conole.log('something blew up' );
+					console.log('something blew up' );
 				} 
   }); // add offender
 			console.log("here is id: "+ id);
