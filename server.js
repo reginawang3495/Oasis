@@ -90,7 +90,7 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 	if (!error && response.statusCode == 200) {
 		var txt = body;
 		console.log("here is txt"+txt);
-		var offenders = str.split("\n");
+		var offenders = txt.split("\n");
 		for(var i = 0; i < offenders.length; i++){
         	var id = addOffender(offenders[i].substring(1,offenders[i].indexOf("\",\""))); // add offender
         	console.log("here is id: "+ id);
