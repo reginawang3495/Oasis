@@ -214,6 +214,7 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 					body :jsonObj1
 				}, function(error, response, body){
 					if (!error && response.statusCode == 200){
+						console.log("askdfjaklsdjf;lakdjf");
 						singlefaceid = body[0].faceId;
 							console.log(singlefaceid);
 
@@ -250,7 +251,7 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 						console.log('message sent successfully');
 
 					} else {
-					console.log('aaaeea == ' + response +" dmdmd "+ body + " vdvv "+error);
+					console.log('aaaeea == ' + response[0] +" dmdmd "+ body[0] + " vdvv "+error);
 					}
 				});
 			}
