@@ -41,7 +41,9 @@ console.log("hi");
 			} else {
 				console.log('error ==1 ' + error);
 			}
-		});
+		}).done(function( msg ) {
+    alert( "Data Saved: " + msg );
+  });
 		return result;
 	}
 
