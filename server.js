@@ -41,7 +41,7 @@ console.log("hi");
 				return body.toString().substring(body.toString().indexOf(":")+3,body.toString().lastIndexOf("\"") );
 				
 			} else {
-				console.log('error ==1 ' + error);
+				console.log('error ==1 ');
 				return -1;
 			}
 		});
