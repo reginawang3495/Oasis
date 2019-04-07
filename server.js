@@ -17,7 +17,7 @@ console.log("hi");
 		var result = "";
 		var jsonObj = {"name":name };
 		console.log("https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons");
-		request({
+		var nothing = await request({
 
 			uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons",
 			method: "POST",
@@ -29,7 +29,7 @@ console.log("hi");
       		body : jsonObj
       		
 
-		},  function(error, response, body, callback){
+		},  function(error, response, body){
 			if (!error && response.statusCode == 200){
 			//	console.log('body string1: '+ response.personId);
 			//	console.log('body string2: '+ JSON.parse(body));
@@ -37,11 +37,9 @@ console.log("hi");
 
 
 				result = body.personId;
-				callback();
 				
 			} else {
 				console.log('error ==1 ' + error);
-				callback();
 			}
 		});
 		return result;
