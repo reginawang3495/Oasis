@@ -47,7 +47,7 @@ console.log("hi");
 
 		function addFace(id, url){
 		var jsonObj = {"url":url };
-
+		console.log(url);
 		request({
 
 			uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons/"+id+"/persistedfaces",
