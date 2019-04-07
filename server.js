@@ -13,7 +13,7 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var request = require('request');
 console.log("hi");
 
-	function addOffender(name){
+	function addOffender(name, callback){
 		var result = "";
 		var jsonObj = {"name":name };
 		console.log("https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons");
@@ -31,18 +31,13 @@ console.log("hi");
 
 		},  function(error, response, body){
 			if (!error && response.statusCode == 200){
-			//	console.log('body string1: '+ response.personId);
-			//	console.log('body string2: '+ JSON.parse(body));
-			//	console.log('body string3: '+ body.personId);
+			status = "succeeded";
+							result = body.personId;
 
+      callback(null, {status : status});
+    } else {
+      callback(error);
 
-				result = body.personId;
-				
-			} else {
-				console.log('error ==1 ' + error);
-			}
-		}).done(function( msg ) {
-    alert( "Data Saved: " + msg );
   });
 		return result;
 	}
