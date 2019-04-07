@@ -30,7 +30,7 @@ console.log("hi");
 
 		}, function(error, response, body){
 			if (!error && response.statusCode == 200){
-				console.log('body string1: '+ JSON.parse(response));
+				console.log('body string1: '+ response.personId);
 				console.log('body string2: '+ JSON.parse(body));
 				console.log('body string3: '+ response.body.toString());
 				console.log('body string4: '+ body.toString());
