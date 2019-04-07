@@ -259,7 +259,7 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 
 
 			function text(){
-				var toSend = "There seems to be no sexual offenders in the picture, but stay safe.".
+				var toSend = "There seems to be no sexual offenders in the picture, but stay safe.";
 				if(isBADGUY)
 					toSend = "Be careful! We are pretty sure that there is a sexual offender in that picture!";
 				var BOdyyyy = "Body=" + toSend + "hiii&From=112133400272&To="+phoneNum+"16266795925&undefined=";
