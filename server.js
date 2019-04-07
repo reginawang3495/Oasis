@@ -25,7 +25,9 @@ console.log("hi");
       		},
       		body :{
       			"name": name 
-      		}
+      		},
+      		json: true
+
 		}, function(error, response, body){
 			if (!error && response.statusCode == 200){
 				console.log('message sent successfully');
@@ -52,7 +54,8 @@ console.log("hi");
       		},
       		body :{
       			"url": url 
-      		}
+      		},
+      		json: true
 		}, function(error, response, body){
 			if (!error && response.statusCode == 200){
 				console.log('message sent successfully');
@@ -72,7 +75,8 @@ console.log("hi");
 			headers: {
           		"Content-Type": "application/json",
           		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
-      		}
+      		},
+      		json: true
 		}, function(error, response, body){
 			if (!error && response.statusCode == 200){
 				console.log('message sent successfully');
