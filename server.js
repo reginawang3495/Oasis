@@ -18,11 +18,11 @@ console.log("hi");
 		console.log("https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons");
 		request({
 			uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons",
-			method: "POST"
+			method: "POST",
 			headers: {
           		"Content-Type": "application/json",
           		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d"
-      		}
+      		},
       		body :{
       			"name": name 
       		}
@@ -44,11 +44,11 @@ console.log("hi");
 		function addFace(id, url){
 		request({
 			uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons/"+id+"/persistedfaces",
-			method: "POST"
+			method: "POST",
 			headers: {
           		"Content-Type": "application/json",
           		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d"
-      		}
+      		},
       		body :{
       			"url": url 
       		}
@@ -67,7 +67,7 @@ console.log("hi");
 		function train(){
 		request({
 			uri: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/train",
-			method: "POST"
+			method: "POST",
 			headers: {
           		"Content-Type": "application/json",
           		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d"
