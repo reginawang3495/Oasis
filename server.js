@@ -1,12 +1,11 @@
 
 var express = require('express');
 var app = express();
+app.use(express.json());
 
 let {PythonShell} = require('python-shell');
 app.use(express.json());
 var request = require("request");
-var bodyParser = require('body-parser');
-app.use(bodyParser.json());
 
 
 
@@ -30,18 +29,18 @@ console.log("hi");
       		body : jsonObj
       		
 
-		}, function(req, response){
-			if (response.statusCode == 200){
+		}, function(error, response, body){
+			if (!error && response.statusCode == 200){
 				console.log('body string1: '+ response.body);
-				console.log('body string2: '+ req.body);
-				console.log('body string3: '+ response);
-				console.log('body string4: '+ body);
+				console.log('body string2: '+ body);
+				console.log('body string3: '+ response.body.toString());
+				console.log('body string4: '+ body.toString());
 
 
 				return body.toString().substring(body.toString().indexOf(":")+3,body.toString().lastIndexOf("\"") );
 				
 			} else {
-				console.log('error ==1 ');
+				console.log('error ==1 ' + error);
 				return -1;
 			}
 		});
