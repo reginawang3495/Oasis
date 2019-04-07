@@ -14,7 +14,7 @@ var request = require('request');
 console.log("hi");
 
 
-	function addOffender(name){
+	function addOffender(__name){
 		console.log("https://westcentralus.api.cognitive.microsoft.com/face/v1.0/largepersongroups/sexualoffenders/persons");
 		request({
 			      		json: true,
@@ -25,7 +25,8 @@ console.log("hi");
           		"Content-Type": "application/json",
           		"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
       		},
-      		body :      			"name": name 
+      		   		 	{ json: { name: __name } }
+
       		)
 
 		}, function(error, response, body){
