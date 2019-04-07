@@ -230,7 +230,7 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 								json: true,
 								body :jsonObj
 							}, function(error, response, body){
-								console
+								console.log("hi");
 								if (!error && response.statusCode == 200){
 									console.log('message sent successfully');
 									try{
@@ -286,7 +286,7 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 
 					return total;
 				} else {
-					console.log('error == ' + error);
+					console.log('erroasdjfhajksdfhr == ' + error);
 					return -1;
 				}
 			});
