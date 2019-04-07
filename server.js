@@ -200,7 +200,7 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 			var imageUrl = req.body.imageUrl;
 			var isBADGUY = false;
 			function facial(){
-				var jsonObj = {"url":imageUrl };
+				var jsonObj1 = {"url":imageUrl };
 				console.log(imageUrl);
 				request({
 
@@ -211,7 +211,7 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 						"Ocp-Apim-Subscription-Key":"50e122d0a26e468bb683e81f687a3e0d",
 					},
 					json: true,
-					body :jsonObj
+					body :jsonObj1
 				}, function(error, response, body){
 					if (!error && response.statusCode == 200){
 						singlefaceid = body[0].faceId;
@@ -249,7 +249,7 @@ request.get('https://reginawang99.github.io/Oasis/resources.txt', function (erro
 						console.log('message sent successfully');
 
 					} else {
-						console.log('error ==2 ' + error);
+					console.log('aaaeea == ' + response +" dmdmd "+ body + " vdvv "+error);
 					}
 				});
 			}
